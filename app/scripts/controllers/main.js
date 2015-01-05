@@ -14,4 +14,9 @@ angular.module('webrtcStreamMobileFirstApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.type = '--';
+    $scope.handleGesture = function($event) {
+      console.log($event.type);
+      $scope.type = $event.type;
+    };
   });
