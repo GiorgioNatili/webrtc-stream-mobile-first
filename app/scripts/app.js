@@ -17,7 +17,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-gestures'
+    'hmTouchEvents'
   ])
   .config(function ($routeProvider) {
     $routeProvider
