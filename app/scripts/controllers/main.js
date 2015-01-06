@@ -11,7 +11,7 @@ angular.module('webrtcStreamMobileFirstApp')
   .controller('MainCtrl', function ($scope, $document) {
 
     $document[0].body.addEventListener('touchmove', function(event) {
-      event.preventDefault();
+       event.preventDefault();
     }, false); 
 
     $scope.awesomeThings = [
