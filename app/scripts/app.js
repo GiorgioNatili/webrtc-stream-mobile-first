@@ -17,7 +17,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'hmTouchEvents'
+    'hmTouchEvents',
+    'toggle-switch'
   ])
   .config(function ($routeProvider) {
     $routeProvider

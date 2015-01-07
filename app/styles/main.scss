@@ -25,7 +25,7 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-
+  min-height: 65px;
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -99,6 +99,7 @@ body {
 .share-buttons{
   list-style: none;
   padding: 0;
+  float: left;
 }
 
 .share-buttons li{
@@ -110,4 +111,8 @@ body {
 
   max-width: 380px;
 
+}
+#toggler{
+  float: right;
+  transform: translateY(50%);
 }

@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-toggle-switch/angular-toggle-switch.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -26,6 +27,9 @@
           <li><a href="https://www.facebook.com/sharer/sharer.php?u=&t=" target="_blank"><img src="images/Facebook.png"></a></li>
           <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img src="images/Twitter.png"></a></li>
         </ul>
+        <div id="toggler">
+          <toggle-switch ng-model="switchStatus"><toggle-switch>
+        </div>
       </div>
 
       <div ng-view=""></div>
@@ -50,6 +54,7 @@
     <script src="bower_components/hammer.js/hammer.js"></script>
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/ryanmullins-angular-hammer/angular.hammer.js"></script>
+    <script src="bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
