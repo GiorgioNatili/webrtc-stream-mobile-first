@@ -16,16 +16,21 @@
   hm-panup="handleGesture"
   hm-pandown="handleGesture"
    >
-  <h1>Testing multiple gestures</h1>
-  <p class="lead">
-    Just play around with pinch, pan, tap and press and see the gesture type in the log.
-    <img src="images/ar-dronebw.png" alt="I'm Yeoman"><br>
-  </p>
+  <h3>Testing multiple gestures</h3>
+  <div class="lead">
+    <p> 
+      Try pinch, pan, tap and press to see the gesture type in the log, use the switch to connect to the camera specified in the IP address field.
+    </p>
+    <img src="images/ar-dronebw.png" alt="I'm Yeoman">
+    <div class="livePixel"></div>
+  <br>
+  </div>
 </div>
 
 <div class="row marketing">
-
-  <p id="gesture-type">{{type}}</p>
+  <p>Camera ip:</p>
+  <input type="text" value="http://192.168.122.1:8080">
+  <p id="gesture-type">Detected <strong>{{type}} </strong> gesture.</p>
   <textarea disabled placeholder="Streaming and UDP logs" />
   </textarea>
 </div>
