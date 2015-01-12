@@ -14,11 +14,8 @@ angular.module('webrtcStreamMobileFirstApp')
        event.preventDefault();
     }, false); 
 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.ipAddress = 'http://192.168.122.1:8080';
+
     $scope.type = '--';
     $scope.handleGesture = function(event) {
       console.log(event);

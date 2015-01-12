@@ -11,7 +11,6 @@
 angular
   .module('webrtcStreamMobileFirstApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
     'ngResource',
     'ngRoute',
