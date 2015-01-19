@@ -14,3 +14,5 @@ To run the app you need to execute Chrome with the security features disabled, r
 ``else`` <br>
     `exec open -na "Google Chrome" --args "--user-data-dir=$fresh_dir" "--disable-web-security"` <br>
 `fi` <br>
+
+For a list of the available flags please refer to this [tutorial](http://peter.sh/experiments/chromium-command-line-switches). 
