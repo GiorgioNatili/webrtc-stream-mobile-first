@@ -10,48 +10,72 @@
 angular.module('webrtcStreamMobileFirstApp')
 .controller('MainCtrl', function ($scope, $document, $sce) {
 
+  // Init CameraRemoteAPI
+  var camera;
+  var actions = [
+    {method:'startLiveview', params: '[]'},
+    {method:'stopLiveview', params: '[]'},
+    {method:'getSupportedShootMode', params: '[]'}
+  ], currentAction;
+
+  var onSuccessStream = function (id, response){
+
+    if(actions[currentAction].method == "startLiveview") {
+      camera.getLiveviewData(response, function(base64Data) {
+        document.getElementById('shoot-image').src = "data:image/jpeg;base64," + base64Data;
+      });
+    }
+
+    if(actions[currentAction].method == "stopLiveview") {
+
+      camera.stopLiveview();
+      document.getElementByID('shoot-image').src = 'images/ar-dronebw.png';
+
+    }
+
+  };
+
+  var onFailStream = function(id, error){
+
+    console.log("--- error response ---")
+    console.log("id: " + id);
+    console.log(error);
+
+  };
+
   $document[0].body.addEventListener('touchmove', function(event) {
     event.preventDefault();
   }, false); 
 
   $scope.$watch('switchStatus', function(newValue){
 
+    if(newValue === undefined)return;
+
     if(newValue === true){
 
-      var iframe = angular.element( document.querySelector( '#stream-fetcher' ));
-      iframe.sandbox = 'allow-scripts';
+      currentAction = 0;
 
-      var script = iframe[0].contentWindow.document.createElement('script');
-      script.type = 'text\/javascript';
+      if(!camera){
 
-      script.onload = function(){
-        
-        $scope.currentCameraURL = $sce.trustAsResourceUrl($scope.ipAddress);
-        iframe[0].contentWindow.connector.connect($scope.ipAddress);
+        camera = new CameraRemoteAPI($scope.ipAddress);
 
-      };
+      }else{
 
-      script.onerror = function(error){
+        camera.setActionListUrl($scope.ipAddress);
 
-        console.log('oh no, the data proxy is not loaded!!!', error);
+      }
 
-      };
+    }else{
 
-      cameraIp = $scope.ipAddress;
-
-      script.src = 'scripts/utils/dataProxy.js';
-      iframe.contents().find('body').append(script);
+      currentAction = 1;
 
     }
 
-  });
-
-  $scope.ipAddress = 'http://192.168.122.1:60152';
-
-  angular.element(document).ready(function () {
-
+    $scope.actionID  = camera[actions[currentAction].method](actions[currentAction].params, onSuccessStream, onFailStream);
 
   });
+
+  $scope.ipAddress = 'http://192.168.122.1:10000/';
 
   $scope.type = '--';
   $scope.handleGesture = function(event) {
@@ -59,4 +83,4 @@ angular.module('webrtcStreamMobileFirstApp')
     $scope.type = event.type;
   };
 
-  });
+});

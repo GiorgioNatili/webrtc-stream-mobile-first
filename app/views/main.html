@@ -21,12 +21,11 @@
     <p> 
       Try pinch, pan, tap and press to see the gesture type in the log, use the switch to connect to the camera specified in the IP address field.
     </p>
-    <img src="images/ar-dronebw.png" alt="I'm Yeoman">
+    <img id="shoot-image" src="images/ar-dronebw.png" alt="I'm Yeoman">
     <div class="livePixel"></div>
   <br>
   </div>
 </div>
-<iframe id="stream-fetcher" ng-src="{{currentCameraURL}}"> </iframe>
 <div class="row marketing">
   <p>Camera ip:</p>
   <input type="text" value="{{ipAddress}}">
