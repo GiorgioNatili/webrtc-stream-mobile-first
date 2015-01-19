@@ -4,10 +4,10 @@ webrtc-stream-mobile-first
 To run the app you need to execute Chrome with the security features disabled, run this script in order to open a fresh new instance of Chrome and then access the app using your IP addrss.
 
 `
-fresh_dir="$HOME/.fresh-chrome"
-
-tmp_dir="/tmp"
-
+`fresh_dir="$HOME/.fresh-chrome"
+`
+`tmp_dir="/tmp"
+`
 set -e
 
 timestamp=`date +%Y%m%d%H%M%S`
