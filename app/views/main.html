@@ -27,9 +27,17 @@
   </div>
 </div>
 <div class="row marketing">
-  <p>Camera ip:</p>
+  <p class="shrink-margin">Camera ip:</p>
   <input type="text" value="{{ipAddress}}">
-  <p id="gesture-type">Detected <strong>{{type}} </strong> gesture.</p>
-  <textarea disabled placeholder="Streaming and UDP logs" />
-  </textarea>
+  <p class="shrink-margin" id="gesture-type">Detected <strong>{{type}} </strong> gesture.</p>
+  <div id="connection" ng-controller="connectionCtrl">
+    <input type="text" value={{connectionKey}}>
+    <button ng-click="connect()" type="button">Connect</button>
+    <textarea id="output"disabled placeholder="Streaming and UDP logs">
+    {{log}}
+    </textarea>
+    <textarea id="response">
+    </textarea>
+  </div>
+
 </div>

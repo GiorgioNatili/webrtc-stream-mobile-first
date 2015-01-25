@@ -148,3 +148,31 @@ body {
   float: right;
   transform: translateY(50%);
 }
+
+.shrink-margin{
+
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+}
+
+#connection{
+  
+  height: 20px;
+  clear: both;
+  margin-bottom: 6px;
+}
+
+#connection button{
+
+  float: right;
+
+}
+
+#connection input{
+
+  float: left;
+  width: 50%;
+  margin-top: 0;
+
+}
