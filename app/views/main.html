@@ -28,7 +28,7 @@
 </div>
 <div class="row marketing">
   <p class="shrink-margin">Camera ip:</p>
-  <input type="text" value="{{ipAddress}}">
+  <input type="text" value="{{ipAddress}}" ng-model="ipAddress">
   <p class="shrink-margin" id="gesture-type">Detected <strong>{{type}} </strong> gesture.</p>
   <div id="connection" ng-controller="connectionCtrl">
     <input type="text" value={{connectionKey}}>
